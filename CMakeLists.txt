@@ -11,5 +11,6 @@ find_package(Qt6 COMPONENTS
         Gui
         Widgets
         REQUIRED)
+
 target_link_libraries(ActivityRegister Qt6::Core Qt6::Gui Qt6::Widgets)
 
