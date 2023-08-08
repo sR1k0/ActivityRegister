@@ -6,8 +6,6 @@
 #include "../Activity.h"
 
 class RegisterTest : public testing::Test{
-    TEST()
-
 
 
 };
