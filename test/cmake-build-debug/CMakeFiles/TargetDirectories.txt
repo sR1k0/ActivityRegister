@@ -1,0 +1,4 @@
+/home/sk/CLionProjects/ActivityRegister/test/cmake-build-debug/CMakeFiles/runAllTest.dir
+/home/sk/CLionProjects/ActivityRegister/test/cmake-build-debug/CMakeFiles/test.dir
+/home/sk/CLionProjects/ActivityRegister/test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sk/CLionProjects/ActivityRegister/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
