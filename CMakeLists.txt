@@ -3,13 +3,21 @@ project(ActivityRegister)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_subdirectory(test)
+enable_testing()
+add_subdirectory(test/lib/googletest)
 
-add_executable(ActivityRegister
-        main.cpp
+set(HEADERS
         Activity.h
         Register.h
-        Register.cpp)
+)
+set(SOURCES
+        Activity.cpp
+        Register.cpp
+
+)
+add_library(ActivityRegister STATIC ${SOURCES} ${HEADERS})
+
+add_subdirectory(test)
 
 
 find_package(Qt6 COMPONENTS

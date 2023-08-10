@@ -1,9 +1,17 @@
 cmake_minimum_required(VERSION 3.26)
-project(ActivityRegister)
+set(THIS runAllTest)
 
-enable_testing()
-find_package(GTest REQUIRED)
-add_executable(runAllTest runAllTest.cpp RegisterTest.cpp)
-target_link_libraries(runAllTest GTest::gtest_main GTest::gtest)
-include(GoogleTest)
-gtest_discover_tests(runAllTest)
+set(SOURCES
+        runAllTest.cpp
+        RegisterTest.cpp
+)
+add_executable(${THIS} ${SOURCES})
+target_link_libraries(${THIS} PUBLIC
+        gtest_main
+        core
+        gtest
+)
+add_test(
+        NAME ${THIS}
+        COMMAND ${THIS}
+)
