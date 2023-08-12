@@ -11,15 +11,18 @@ using namespace std;
 class Activity {
 public:
     explicit Activity(string n) : name(n){}
-    void typeDescription(string d);
+    int typeDescription(char d[]);
     string getDescription();
-    void printDescription();
+    void printDescription(int i = 0);
+
     string getName();
     ~Activity() = default;
 
 
 private:
-    string name, description;
+    int maxCarachter = 249;
+    string name;
+    char description[];
 };
 
 

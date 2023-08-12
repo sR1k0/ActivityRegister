@@ -1,8 +1,8 @@
-#include "headers.h"
-
+#include "Activity.h"
+#include "Activity.cpp"
 
 int main() {
-    Activity* activity;
-    activity = new Activity("bella");
-
+    char* d;
+    Activity activity("test1");
+    activity.typeDescription(d);
 }

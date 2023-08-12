@@ -2,21 +2,32 @@
 // Created by sk on 10/08/23.
 //
 using namespace std;
-
 #include <iostream>
 #include "Activity.h"
 
-void Activity::typeDescription(string d) {
-    cin >> d;
-    description = d;
+int Activity::typeDescription(char d[]) {
+    int i, totChar = 0;
+    cout << "When finish the description press bar space to complete." << endl;
+    cout << "Write activity description: " << endl;
+    for(i = 0; i < maxCarachter, d[i] != ' '; i++){
+        description[i] = d[i];
+        totChar++;
+        if(i == maxCarachter){
+            cerr << "maximum content reached" << endl;
+        }
+    }
+    return totChar;
 }
 
 string Activity::getDescription() {
         return description;
 }
 
-void Activity::printDescription() {
-    cout << description << endl;
+void Activity::printDescription(int i){
+    while(description != "." | description != "" | i != maxCarachter){
+        cout << description[i];
+        i--;
+    }
 }
 
 
