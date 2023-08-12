@@ -6,9 +6,10 @@
 #include "Register.h"
 
 
-void Register::window(const string& title) {
+bool Register::window(const string& title) {
     name = title;
     cout << title << endl;
+    return true;
 }
 
 string Register::geTitle() {

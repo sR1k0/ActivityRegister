@@ -7,15 +7,16 @@
 
 #include <string>
 #include "Activity.h"
-#include "QtWidgets"
 
 using namespace std;
 
 class Register{
 public:
-    Register() = default;
-    void window(const string& title);
+    explicit Register(string n) : name(n){}
+    bool window(const string& title);
     string geTitle();
+    ~Register() = default;
+private:
     string name;
 };
 #endif //ACTIVITYREGISTER_REGISTER_H

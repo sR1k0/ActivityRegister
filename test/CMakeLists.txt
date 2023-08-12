@@ -3,12 +3,12 @@ set(THIS runAllTest)
 
 set(SOURCES
         runAllTest.cpp
-        RegisterTest.cpp
+        FixtureTest.cpp
 )
+
 add_executable(${THIS} ${SOURCES})
 target_link_libraries(${THIS} PUBLIC
         gtest_main
-        core
         gtest
 )
 add_test(

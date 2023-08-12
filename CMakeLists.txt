@@ -13,7 +13,7 @@ set(HEADERS
 set(SOURCES
         Activity.cpp
         Register.cpp
-
+        main.cpp
 )
 add_library(ActivityRegister STATIC ${SOURCES} ${HEADERS})
 
