@@ -15,12 +15,12 @@ class ActivityTest : public testing::Test{
 protected:
     Activity *activity;
     ActivityTest(){
-        activity = new Activity("title");
+        activity = new Activity("name");
     };
     ~ActivityTest() override = default;
 
     void SetUp() override{
-        activity = new Activity("titolo");
+        activity = new Activity("name");
     };
     void TearDown() override{
         delete activity;
@@ -28,7 +28,7 @@ protected:
 };
 
 TEST_F(ActivityTest, createActivity){
-    ASSERT_THAT("name", activity->getName());
+    ASSERT_THAT("titolo", activity->getName());
 }
 
 class RegisterTest : public testing::Test{
