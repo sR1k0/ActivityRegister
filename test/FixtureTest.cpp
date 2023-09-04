@@ -1,6 +1,8 @@
 //
 // Created by sk on 06/08/23.
 //
+#include <QApplication>
+#include <QtWidgets>
 #include <string>
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
@@ -8,7 +10,30 @@
 #include "../Register.cpp"
 #include "../Activity.h"
 #include "../Activity.cpp"
+#include "../qtregister.h"
+#include "../qtregister.cpp"
+#include "/home/sk/CLionProjects/ActivityRegister/cmake-build-debug/ActivityRegister_autogen/include/ui_qtregister.h"
 
+class QTRegisterTest : public testing::Test{
+protected:
+    REG_I::qtregister* qtregister;
+    QTRegisterTest(){
+        qtregister = new REG_I::qtregister;
+    }
+    virtual ~QTRegisterTest(){
+        delete qtregister;
+    }
+    void SetUp(){
+        qtregister = new REG_I::qtregister();
+    }
+    void TearDown(){
+        delete qtregister;
+    }
+};
+
+
+TEST_F(QTRegisterTest, canCreateWindow){
+}
 
 
 class ActivityTest : public testing::Test{
@@ -31,10 +56,12 @@ TEST_F(ActivityTest, createActivity){
     ASSERT_THAT("name", activity->getName());
 }
 
-TEST_F(ActivityTest, typeDescritption){
-    char d[] = {'c','i','a','o','.', ' '};
-    EXPECT_EQ(5, activity->typeDescription(d));
+TEST_F(ActivityTest, TypeDescritption){
+    string d;
+    EXPECT_EQ(4, activity->typeDescription(d));
+    ASSERT_THAT("ciao", activity->getDescription());
 }
+
 
 class RegisterTest : public testing::Test{
 protected:
@@ -52,7 +79,6 @@ protected:
     };
 };
 
-
 TEST_F(RegisterTest, canCreateWindow){
     ASSERT_EQ(true, aRegister->window(""));
 }
@@ -61,5 +87,3 @@ TEST_F(RegisterTest, canCreateRegister){
     string check = aRegister->geTitle();
     ASSERT_THAT("titolo", check);
 }
-
-

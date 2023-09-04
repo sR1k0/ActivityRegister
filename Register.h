@@ -12,8 +12,8 @@ using namespace std;
 
 class Register{
 public:
-    explicit Register(string n) : name(n){}
-    bool window(const string& title);
+    explicit Register(string n) : name(n) {};
+    bool window(const string &title);
     string geTitle();
     ~Register() = default;
 private:

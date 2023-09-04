@@ -11,9 +11,9 @@ using namespace std;
 class Activity {
 public:
     explicit Activity(string n) : name(n){}
-    int typeDescription(char d[]);
+    int typeDescription(string d);
     string getDescription();
-    void printDescription(int i = 0);
+    void printDescription();
 
     string getName();
     ~Activity() = default;
@@ -22,7 +22,7 @@ public:
 private:
     int maxCarachter = 249;
     string name;
-    char description[];
+    string description;
 };
 
 

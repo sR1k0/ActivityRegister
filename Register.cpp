@@ -6,6 +6,7 @@
 #include "Register.h"
 
 
+
 bool Register::window(const string& title) {
     name = title;
     cout << title << endl;
@@ -15,3 +16,5 @@ bool Register::window(const string& title) {
 string Register::geTitle() {
     return name;
 }
+
+
