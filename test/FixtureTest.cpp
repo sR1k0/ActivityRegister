@@ -53,7 +53,7 @@ protected:
 };
 
 TEST_F(ActivityTest, createActivity){
-    ASSERT_THAT("name", activity->getName());
+    ASSERT_THAT("titolo", activity->getName());
 }
 
 TEST_F(ActivityTest, TypeDescritption){
